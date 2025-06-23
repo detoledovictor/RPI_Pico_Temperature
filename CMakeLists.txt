@@ -48,5 +48,33 @@ pico_enable_stdio_uart(pico_temperature 0)
 # create map/bin/hex file etc.
 pico_add_extra_outputs(pico_temperature)
 
-# add url via pico_set_program_url
+# Add the standard library to the build
+target_link_libraries(pico_temperature
+        pico_stdlib)
 
+# Add the standard include files to the build
+target_include_directories(pico_temperature PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}
+)
+
+# Add any user requested libraries
+target_link_libraries(pico_temperature 
+        pico_cyw43_arch_lwip_poll
+        pico_lwip_mqtt
+        tinyusb_board
+        )
+# Add the standard library to the build
+target_link_libraries(pico_temperature
+        pico_stdlib)
+
+# Add the standard include files to the build
+target_include_directories(pico_temperature PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}
+)
+
+# Add any user requested libraries
+target_link_libraries(pico_temperature 
+        pico_cyw43_arch_lwip_poll
+        pico_lwip_mqtt
+        tinyusb_board
+        )
