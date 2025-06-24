@@ -1,1 +1,0 @@
-Arquitetura e Aplicação de sistemas - exercicio 02 - Leitor de temperatura interna do MCU RP2040
